@@ -1,0 +1,57 @@
+<div class="users-container">
+    <div class="page-header">
+        <h2>All Users</h2>
+        <div class="actions">
+            <input type="text" placeholder="Search User" [(ngModel)]="searchText" (input)="searchUsers()">
+            <a routerLink="/add-user" class="add-btn">
+                Add User
+            </a>
+        </div>
+    </div>
+
+    <app-user-table 
+    [columns]="columns"
+    [fieldMappings]="fieldMappings" 
+    [data]="filteredUsers"
+    
+    [currentSortField]="sortField"
+    [currentSortOrder]="sortOrder"
+
+    [showView]="true"
+    [showEdit]="true"
+    [showDelete]="true"
+
+    (sortColumn)="onSort($event)"
+
+    (viewUser)="viewUser($event)" 
+    (editUser)="editUser($event)"
+    (deleteUser)="deleteUser($event)">
+    </app-user-table>
+
+</div>
+
+<!-- Pagination -->
+
+<div class="pagination">
+
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+
+        Previous
+
+    </button>
+
+    <span>
+
+        Page {{ currentPage }}
+        of
+        {{ totalPages }}
+
+    </span>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+
+        Next
+
+    </button>
+
+</div>

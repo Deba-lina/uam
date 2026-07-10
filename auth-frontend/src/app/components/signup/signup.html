@@ -1,0 +1,36 @@
+<div class="auth-container">
+  <h2>Create Account</h2>
+
+  <p class="success-message" *ngIf="successMessage">
+    {{ successMessage }}
+  </p>
+
+  <p class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+
+  <form class="auth-form" (ngSubmit)="onSignup()">
+    <input
+      type="email"
+      placeholder="Enter Email"
+      [(ngModel)]="signupData.email"
+      name="email"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Enter Password"
+      [(ngModel)]="signupData.password"
+      name="password"
+      required
+    />
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <div class="auth-link">
+    Already have an account?
+    <a routerLink="/login">Login</a>
+  </div>
+</div>

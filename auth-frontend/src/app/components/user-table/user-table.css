@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #324b77;
+  color: white;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f5f7fb;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn {
+  background: #3b82f6;
+}
+
+.edit-btn {
+  background: #10b981;
+}
+
+.delete-btn {
+  background: #ef4444;
+}

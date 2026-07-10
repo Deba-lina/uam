@@ -1,0 +1,76 @@
+<div class="profile-page">
+
+  <div class="profile-grid">
+
+    <div class="profile-card">
+
+      <div class="avatar">
+        {{ userData?.firstName?.charAt(0) }}
+      </div>
+
+      <h2>
+        {{ userData?.firstName }}
+        {{ userData?.lastName }}
+      </h2>
+
+      <p>{{ userData?.role }}</p>
+      <p>{{ userData?.team }}</p>
+
+      <span class="status">
+        Active
+      </span>
+
+    </div>
+
+    <div class="details-card">
+
+      <h3>Profile Details</h3>
+
+      <div class="details-grid">
+
+        <div>
+          <label>Full Name</label>
+          <div class="field">
+            {{ userData?.firstName }}
+            {{ userData?.lastName }}
+          </div>
+        </div>
+
+        <div>
+          <label>Email</label>
+          <div class="field">
+            {{ userData?.email }}
+          </div>
+        </div>
+
+        <div>
+          <label>Role</label>
+          <div class="field">
+            {{ userData?.role }}
+          </div>
+        </div>
+
+        <div>
+          <label>Team</label>
+          <div class="field">
+            {{ userData?.team }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="section-card">
+
+    <h3>Assigned Site</h3>
+
+    <span class="chip">
+      {{ userData?.site }}
+    </span>
+
+  </div>
+
+</div>

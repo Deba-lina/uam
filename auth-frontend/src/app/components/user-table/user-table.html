@@ -1,0 +1,62 @@
+<table>
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            @for (column of columns; track column.field){
+            <th>
+                {{ column.label }}
+                @if(column.sortable){
+                <button class="sort-btn" (click)="sortColumn.emit(column.field)">
+                    @if(currentSortField === column.field){
+                    {{ currentSortOrder === 'asc' ? '▲' : '▼' }}
+                    } @else {
+                    ↕️
+                    }
+                </button>
+                }
+            </th>
+            }
+
+            @if(showView || showEdit || showDelete){
+            <th>Actions</th>
+            }
+        </tr>
+    </thead>
+
+    <tbody>
+        @for(item of data; track item._id){
+        <tr>
+            <td>{{ $index + 1 }}</td>
+            @for(field of fieldMappings; track field){
+            <td>
+                {{ item[field] }}
+            </td>
+            }
+            @if(showView || showEdit || showDelete){
+            <td>
+
+                @if(showView){
+                <button class="view-btn" (click)="viewUser.emit(item)">
+                    View
+                </button>
+                }
+
+                @if(showEdit){
+                <button class="edit-btn" (click)="editUser.emit(item)">
+                    Edit
+                </button>
+                }
+
+                @if(showDelete){
+                <button class="delete-btn" (click)="deleteUser.emit(item._id)">
+                    Delete
+                </button>
+                }
+
+            </td>
+
+            }
+        </tr>
+        }
+    </tbody>
+</table>

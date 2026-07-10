@@ -1,0 +1,68 @@
+.profile-page {
+  padding: 30px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.profile-card,
+.details-card,
+.section-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: #2962ff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.field {
+  background: #f5f7fb;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.status {
+  background: green;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.section-card {
+  margin-top: 20px;
+}
+
+.chip {
+  background: #e8efff;
+  color: #2962ff;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
