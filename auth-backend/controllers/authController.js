@@ -178,6 +178,7 @@ export const deleteUser = async (req, res) => {
 
 };
 
+//update user
 export const updateUser = async (req, res) => {
     const updateData = { ...req.body };
     if (updateData.password) {
