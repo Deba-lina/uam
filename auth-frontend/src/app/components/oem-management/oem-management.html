@@ -7,39 +7,24 @@
     <h3>Upload Excel File</h3>
     <p>Upload an Excel file to import OEM data.</p>
 
-    <div
-  class="drop-zone"
-  [class.dragging]="isDragging"
-  (click)="fileInput.click()"
-  (dragover)="onDragOver($event)"
-  (dragleave)="onDragLeave($event)"
-  (drop)="onDrop($event)"
->
+    <div class="drop-zone" [class.dragging]="isDragging" (click)="fileInput.click()" (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
 
-  <div class="upload-icon">
-    <i class="fa-solid fa-cloud-arrow-up"></i>
-</div>
+      <div class="upload-icon">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+      </div>
 
-  <p>Drag and drop your Excel file here</p>
+      <p>Drag and drop your Excel file here</p>
 
-  <p class="or-text">or</p>
+      <p class="or-text">or</p>
 
-  <button
-    type="button"
-    class="choose-btn"
-    (click)="$event.stopPropagation(); fileInput.click()">
-    Choose File
-  </button>
+      <button type="button" class="choose-btn" (click)="$event.stopPropagation(); fileInput.click()">
+        Choose File
+      </button>
 
-  <input
-    #fileInput
-    hidden
-    type="file"
-    accept=".xlsx,.xls"
-    (change)="onFileSelected($event)"
-  />
+      <input #fileInput hidden type="file" accept=".xlsx,.xls" (change)="onFileSelected($event)" />
 
-</div>
+    </div>
 
     <p class="info">
       Only .xlsx and .xls files are allowed
@@ -52,10 +37,7 @@
         <strong>{{ selectedFile.name }}</strong>
       </span>
 
-      <button
-        class="upload-btn"
-        [disabled]="!selectedFile"
-        (click)="uploadExcel()">
+      <button class="upload-btn" [disabled]="!selectedFile" (click)="uploadExcel()">
 
         Upload
 
@@ -65,15 +47,12 @@
 
   </div>
 
-  <div class="table-card">
+  <div class="table-container">
 
-      <h2>OEM Data List</h2>
+    <app-user-table [columns]="columns" [fieldMappings]="fieldMappings" [data]="oemData" [showView]="false"
+      [showEdit]="false" [showDelete]="false">
 
-      <div class="empty-table">
-
-          OEM Data is Empty
-
-      </div>
+    </app-user-table>
 
   </div>
 
