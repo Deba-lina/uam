@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(81, 84, 241, 0.25), transparent 45%),
+    radial-gradient(circle at top right, rgba(38, 247, 160, 0.22), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(2, 51, 27, 0.18), transparent 40%),
+    linear-gradient(135deg, #ffffff 0%, #f8faff 50%, #eef4ff 100%)
+  
+}
