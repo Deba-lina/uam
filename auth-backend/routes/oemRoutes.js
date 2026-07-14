@@ -1,19 +1,9 @@
 import express from "express";
-
-import upload
-from "../middleware/uploadMiddleware.js";
-
-import {
-  uploadExcel
-}
-from "../controllers/oemController.js";
-
+import upload from "../middleware/uploadMiddleware.js";
+import {uploadExcel, getOems} from "../controllers/oemController.js";
 const router = express.Router();
 
-router.post(
-  "/upload-oem",
-  upload.single("file"),
-  uploadExcel
-);
+router.post("/upload-oem", upload.single("file"), uploadExcel);
+router.get("/oems",getOems);
 
 export default router;

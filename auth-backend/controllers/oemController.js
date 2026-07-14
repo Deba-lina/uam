@@ -139,3 +139,29 @@ export const uploadExcel = async (
   }
 
 };
+
+export const getOems = async (
+  req,
+  res
+) => {
+
+  try {
+
+    const oems = await Oem.find();
+
+    res.status(200).json(
+      oems
+    );
+
+  } catch (error) {
+
+    res.status(500).json({
+
+      message:
+        "Unable to fetch OEM data"
+
+    });
+
+  }
+
+};
