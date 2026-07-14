@@ -15,7 +15,7 @@ a {
 }
 
 .navbar {
-  background: white;
+  background: rgb(245, 241, 241);
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;

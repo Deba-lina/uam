@@ -7,6 +7,9 @@
     <a routerLink="/signup" *ngIf="!authService.isLoggedIn()">Sign Up</a>
     <a routerLink="/profile" *ngIf="authService.isLoggedIn()">Profile</a>
     <a routerLink="/users" *ngIf="authService.isLoggedIn()">User Management</a>
+    <a routerLink="/oem-management" *ngIf="authService.isLoggedIn()">
+      OEM Management
+    </a>
     <a (click)="authService.logout()" *ngIf="authService.isLoggedIn()">LogOut</a>
   </div>
 </nav>

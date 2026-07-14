@@ -1,0 +1,80 @@
+<div class="oem-container">
+
+  <h1>OEM Data</h1>
+
+  <div class="upload-card">
+
+    <h3>Upload Excel File</h3>
+    <p>Upload an Excel file to import OEM data.</p>
+
+    <div
+  class="drop-zone"
+  [class.dragging]="isDragging"
+  (click)="fileInput.click()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (drop)="onDrop($event)"
+>
+
+  <div class="upload-icon">
+    <i class="fa-solid fa-cloud-arrow-up"></i>
+</div>
+
+  <p>Drag and drop your Excel file here</p>
+
+  <p class="or-text">or</p>
+
+  <button
+    type="button"
+    class="choose-btn"
+    (click)="$event.stopPropagation(); fileInput.click()">
+    Choose File
+  </button>
+
+  <input
+    #fileInput
+    hidden
+    type="file"
+    accept=".xlsx,.xls"
+    (change)="onFileSelected($event)"
+  />
+
+</div>
+
+    <p class="info">
+      Only .xlsx and .xls files are allowed
+    </p>
+
+    <div class="bottom-row">
+
+      <span *ngIf="selectedFile">
+        Selected :
+        <strong>{{ selectedFile.name }}</strong>
+      </span>
+
+      <button
+        class="upload-btn"
+        [disabled]="!selectedFile"
+        (click)="uploadExcel()">
+
+        Upload
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="table-card">
+
+      <h2>OEM Data List</h2>
+
+      <div class="empty-table">
+
+          OEM Data is Empty
+
+      </div>
+
+  </div>
+
+</div>
