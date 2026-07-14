@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import User from "./models/User.js";
 import { errorHandler } from "./middleware/index.js";
+import oemRoutes from "./routes/oemRoutes.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ const JWT_SECRET = "";
 app.use(express.json());
 app.use(cors());
 app.use("/api", authRoutes);
+app.use("/api", oemRoutes);
 app.use(errorHandler);
 
 mongoose
